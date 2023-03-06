@@ -19,7 +19,24 @@
     #define paint_h
 
 typedef struct paint_s {
-    int x;
+    sfTexture *texture_bkgd;
+    sfSprite *sprite_bkgd;
+    sfTexture *texture_notepad;
+    sfSprite *sprite_notepad;
+    short test;
 } paint_t;
+
+// Create background texture & sprite.
+int create_background(paint_t *p);
+// Create notepad texture & sprite.
+int create_notepad(paint_t *p);
+
+void draw_sprites(sfRenderWindow *window, paint_t *p);
+
+void analyse_events(sfEvent event, paint_t *p);
+
+void setup_sprites(paint_t *p);
+
+int close_one(sfRenderWindow *window, sfEvent event);
 
 #endif /* !paint_h */

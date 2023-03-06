@@ -6,6 +6,8 @@
 ##
 
 SRC	=	src/main.c	\
+		src/sprite.c	\
+		src/create_assets/create_workplan.c	\
 
 NAME	=	my_paint
 
@@ -13,9 +15,9 @@ OBJ	=	$(SRC:.c=.o)
 
 LIB =	lib/my/libmy.a
 
-LDLIBS = -lmy
+LDLIBS = -lmy -lcsfml-graphics
 
-LFLAGS = -L lib/my
+LFLAGS = -L lib/my -l csfml-window -l csfml-system -l csfml-audio
 
 CFLAGS =	-W -Wall -Wextra -g -lncurses -Iinclude
 
@@ -24,7 +26,7 @@ VALGRIND =	-ggdb3
 all:	$(LIB) $(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(OBJ) $(LDLIBS) $(LFLAGS) $(CFLAGS)
+	gcc -o $(NAME) $(OBJ) $(LDLIBS) $(LFLAGS) $(LFLAGS) $(CFLAGS) -lm
 
 debug:	$(LIB)
 	gcc -o $(NAME) $(SRC) $(LDLIBS) $(LFLAGS) $(CFLAGS) $(VALGRIND) -g
