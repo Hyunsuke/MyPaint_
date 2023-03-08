@@ -19,11 +19,13 @@
     #define paint_h
 
 typedef struct paint_s {
-    sfTexture *texture_bkgd;
+    sfTexture *texture_background;
     sfSprite *sprite_bkgd;
     sfTexture *texture_notepad;
     sfSprite *sprite_notepad;
     short test;
+    unsigned int window_x;
+    unsigned int window_y;
 } paint_t;
 
 // Create background texture & sprite.
@@ -38,5 +40,7 @@ void analyse_events(sfEvent event, paint_t *p);
 void setup_sprites(paint_t *p);
 
 int close_one(sfRenderWindow *window, sfEvent event);
+
+sfSprite *my_getSprite(char *filepath, sfVector2f position, sfVector2f scale);
 
 #endif /* !paint_h */

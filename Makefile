@@ -7,7 +7,7 @@
 
 SRC	=	src/main.c	\
 		src/sprite.c	\
-		src/create_assets/create_workplan.c	\
+		src/utils.c	\
 
 NAME	=	my_paint
 

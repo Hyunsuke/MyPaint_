@@ -13,12 +13,16 @@ void start(paint_t *p)
     sfEvent event;
     setup_sprites(p);
     window = sfRenderWindow_create(mode, "my_paint", sfResize | sfClose, NULL);
+    sfRenderWindow_getSize(window);
     sfRenderWindow_setFramerateLimit(window, 144);
 
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
         draw_sprites(window, p);
         sfRenderWindow_display(window);
+        p->window_x = sfRenderWindow_getSize(window).x;
+        p->window_y = sfRenderWindow_getSize(window).y;
+        my_printf("%d && %d\n", p->window_x, p->window_y);
         while (sfRenderWindow_pollEvent(window, &event) &&
         (p->test = close_one(window, event)) == 0)
             analyse_events(event, p);
