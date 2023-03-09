@@ -19,10 +19,10 @@
     #define paint_h
 
 typedef struct paint_s {
-    sfTexture *texture_background;
-    sfSprite *sprite_bkgd;
-    sfTexture *texture_notepad;
+    sfSprite *sprite_background;
     sfSprite *sprite_notepad;
+    sfSprite *sprite_tools;
+    sfRectangleShape *rectangle_draw;
     short test;
     unsigned int window_x;
     unsigned int window_y;
@@ -41,6 +41,7 @@ void setup_sprites(paint_t *p);
 
 int close_one(sfRenderWindow *window, sfEvent event);
 
-sfSprite *my_getSprite(char *filepath, sfVector2f position, sfVector2f scale);
+sfSprite *my_getsprite(char *filepath, sfVector2f position, sfVector2f scale);
+sfRectangleShape *my_getrectangle(sfVector2f pos, sfVector2f size);
 
 #endif /* !paint_h */

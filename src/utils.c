@@ -10,7 +10,6 @@ sfSprite *my_getsprite(char *filepath, sfVector2f pos, sfVector2f scale)
 {
     sfTexture *texture = sfTexture_createFromFile(filepath, NULL);
     if (texture == NULL) {
-        my_printf("Failed to load background texture\n");
         exit(84);
     }
     sfSprite *sprite = sfSprite_create();
@@ -20,13 +19,12 @@ sfSprite *my_getsprite(char *filepath, sfVector2f pos, sfVector2f scale)
     return sprite;
 }
 
-/*
-sfRectangleShape my_getRectangle(sfVector2f pos,)
+sfRectangleShape *my_getrectangle(sfVector2f pos, sfVector2f size)
 {
     sfRectangleShape *rectangle = sfRectangleShape_create();
-    p->rectangle_size = (sfVector2f) {20, 20};
-    sfRectangleShape_setOrigin(rectangle, origin_pos);
+    sfRectangleShape_setSize(rectangle, size);
     sfRectangleShape_setPosition(rectangle, pos);
-    return 0;
+    sfRectangleShape_setOutlineThickness(rectangle, 3);
+    sfRectangleShape_setOutlineColor(rectangle, sfBlack);
+    return rectangle;
 }
-*/
