@@ -17,6 +17,7 @@ SRC	=	src/main.c	\
 		src/create_rectangles/init_rectangles.c	\
 		src/create_sprites/init_sprites.c	\
 		src/create_text/init_texts.c	\
+		src/create_text/help_phrase.c \
 		src/event.c	\
 
 NAME	=	my_paint

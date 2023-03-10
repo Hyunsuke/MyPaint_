@@ -11,6 +11,7 @@ void init_all(paint_t *p)
     init_text_menu(p); init_rect_menu(p);
     init_text_file(p); init_text_edit(p); init_text_help(p);
     init_rect(p); init_rect_2(p); init_rect_3(p);
+    help_phrase1(p);
 }
 
 void start(paint_t *p)

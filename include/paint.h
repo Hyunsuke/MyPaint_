@@ -62,6 +62,7 @@ typedef struct paint_s {
     sfText *ab_exit;
     sfText *he_exit;
     sfText *text_he;
+    sfText *hp;
     short test;
     unsigned int window_x;
     unsigned int window_y;
@@ -117,6 +118,7 @@ void init_rect_3(paint_t *p);
 void init_text_edit(paint_t *p);
 void init_text_file(paint_t *p);
 void init_text_help(paint_t *p);
+void help_phrase1(paint_t *p);
 
 // Close the window
 int close_one(sfRenderWindow *window, sfEvent event);

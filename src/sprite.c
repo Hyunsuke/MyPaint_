@@ -79,5 +79,6 @@ void help_isopen(sfRenderWindow *window, paint_t *p)
         sfRenderWindow_drawSprite(window, p->help_back, NULL);
         sfRenderWindow_drawText(window, p->text_he, NULL);
         sfRenderWindow_drawText(window, p->ab_exit, NULL);
+        sfRenderWindow_drawText(window, p->hp, NULL);
     }
 }
