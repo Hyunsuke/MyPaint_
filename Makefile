@@ -8,6 +8,12 @@
 SRC	=	src/main.c	\
 		src/sprite.c	\
 		src/utils.c	\
+		src/contour.c \
+		src/fill_rect.c \
+		src/contour2.c \
+		src/contour3.c \
+		src/fill_edit.c \
+		src/fill_help.c \
 
 NAME	=	my_paint
 
