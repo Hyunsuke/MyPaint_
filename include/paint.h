@@ -25,6 +25,7 @@ typedef struct paint_s {
     sfSprite *sprite_tools;
     sfSprite *about_back;
     sfSprite *help_back;
+    sfSprite *tab_colors;
     sfRectangleShape *rectangle_draw;
     sfRectangleShape *file_rect;
     sfRectangleShape *edition_rect;
@@ -40,6 +41,7 @@ typedef struct paint_s {
     sfRectangleShape *pi_rect;
     sfRectangleShape *about_rect;
     sfRectangleShape *he_rect;
+    sfRectangleShape *current_color;
     sfText *file_text;
     sfText *edit_text;
     sfText *help_text;
@@ -74,6 +76,17 @@ typedef struct paint_s {
     bool ispiclick;
     bool isabclick;
     bool isheclick;
+    bool isItBlack;
+    bool isItGray;
+    bool isItBlue;
+    bool isItWhite;
+    bool isItLightGray;
+    bool isItLightBlue;
+    bool isItGreen;
+    bool isItRed;
+    bool isItYellow;
+    bool isItMagenta;
+    bool isItCyan;
     sfVector2f pos_file;
     sfVector2f pos_edit;
     sfVector2f pos_help;
@@ -82,27 +95,41 @@ typedef struct paint_s {
     sfVector2f size_help;
 } paint_t;
 
-// Create background texture & sprite.
-int create_background(paint_t *p);
-// Create notepad texture & sprite.
-int create_notepad(paint_t *p);
-
+// Draw the sprites
 void draw_sprites(sfRenderWindow *window, paint_t *p);
 
+// Check the events occuring
 void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window);
 
+// Initialize menu
+void init_rect_menu(paint_t *p);
+void init_text_menu(paint_t *p);
+
+// Initialize sprites
 void setup_sprites(paint_t *p);
-void init_menu(paint_t *p);
+
+// Initialize rectangles
 void init_rect(paint_t *p);
 void init_rect_2(paint_t *p);
-void init_text_edit(paint_t *p);
-void init_rect3(paint_t *p);
+void init_rect_3(paint_t *p);
 
+// Initialize texts
+void init_text_edit(paint_t *p);
+void init_text_file(paint_t *p);
+void init_text_help(paint_t *p);
+
+// Close the window
 int close_one(sfRenderWindow *window, sfEvent event);
 
+// Return the sprite wanted with given parameters
 sfSprite *my_getsprite(char *filepath, sfVector2f position, sfVector2f scale);
+
+// Return the rectangle wanted with given parameters
 sfRectangleShape *my_getrect(sfVector2f pos, sfVector2f size, sfColor col);
+
+// Return the text wanted with given parameters
 sfText *my_gettext(char *phrase, char *police, sfVector2f pos, int size);
+
 void file_contour(paint_t *p, sfRenderWindow *window);
 void edit_contour(paint_t *p, sfRenderWindow *window);
 void help_contour(paint_t *p, sfRenderWindow *window);
@@ -121,5 +148,16 @@ void check_edit3(sfMouseButtonEvent event, paint_t *p);
 void check_help(sfMouseButtonEvent event, paint_t *p);
 void fill_about_help(paint_t *p);
 void exit_color(paint_t *p, sfRenderWindow *window);
+
+void init_all(paint_t *p);
+void check_opened_menu(sfRenderWindow *window, paint_t *p);
+void file_isopen(sfRenderWindow *window, paint_t *p);
+void edit_isopen(sfRenderWindow *window, paint_t *p);
+void help_isopen(sfRenderWindow *window, paint_t *p);
+
+void check_exit(sfMouseButtonEvent event, paint_t *p);
+void fill_file_rect(sfMouseButtonEvent event, paint_t *p);
+void fill_edit_rect(sfMouseButtonEvent event, paint_t *p);
+void fill_help_rect(sfMouseButtonEvent event, paint_t *p);
 
 #endif /* !paint_h */

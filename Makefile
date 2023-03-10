@@ -14,6 +14,10 @@ SRC	=	src/main.c	\
 		src/contour3.c \
 		src/fill_edit.c \
 		src/fill_help.c \
+		src/create_rectangles/init_rectangles.c	\
+		src/create_sprites/init_sprites.c	\
+		src/create_text/init_texts.c	\
+		src/event.c	\
 
 NAME	=	my_paint
 
