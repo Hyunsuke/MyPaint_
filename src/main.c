@@ -8,10 +8,13 @@
 
 void init_all(paint_t *p)
 {
-    init_text_menu(p); init_rect_menu(p);
+    init_text_menu(p); init_rect_menu(p); init_images(p);
     init_text_file(p); init_text_edit(p); init_text_help(p);
-    init_rect(p); init_rect_2(p); init_rect_3(p);
+    init_rect(p); init_rect_2(p);
+    init_rect_3(p);
     help_phrase1(p);
+    p->color = sfImage_getPixel(p->all_colors_image, 40, 40);
+
 }
 
 void start(paint_t *p)
@@ -27,6 +30,7 @@ void start(paint_t *p)
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
         draw_sprites(window, p);
+        painting(window, event, p);
         sfRenderWindow_display(window);
         p->window_x = sfRenderWindow_getSize(window).x;
         p->window_y = sfRenderWindow_getSize(window).y;
@@ -35,7 +39,6 @@ void start(paint_t *p)
             analyse_events(event, p, window);
         }
     }
-    sfRenderWindow_destroy(window);
 }
 
 int close_one(sfRenderWindow *window, sfEvent event)

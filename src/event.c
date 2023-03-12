@@ -11,6 +11,7 @@ void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
     if (event.type == sfEvtMouseButtonPressed) {
         my_printf("%d %d\n", event.mouseButton.x, event.mouseButton.y);
         manage_mouse_click(event.mouseButton, p);
+        update_colors(event, p);
     }
     file_contour(p, window);
     edit_contour(p, window);

@@ -19,6 +19,10 @@ SRC	=	src/main.c	\
 		src/create_text/init_texts.c	\
 		src/create_text/help_phrase.c \
 		src/event.c	\
+		src/create_images/init_images.c	\
+		src/colors/colors.c	\
+		src/colors/give_color.c	\
+		src/draw/draw.c	\
 
 NAME	=	my_paint
 

@@ -77,23 +77,19 @@ typedef struct paint_s {
     bool ispiclick;
     bool isabclick;
     bool isheclick;
-    bool isItBlack;
-    bool isItGray;
-    bool isItBlue;
-    bool isItWhite;
-    bool isItLightGray;
-    bool isItLightBlue;
-    bool isItGreen;
-    bool isItRed;
-    bool isItYellow;
-    bool isItMagenta;
-    bool isItCyan;
+    int mouse_pos_x;
+    int mouse_pos_y;
     sfVector2f pos_file;
     sfVector2f pos_edit;
     sfVector2f pos_help;
     sfVector2f size_file;
     sfVector2f size_edit;
     sfVector2f size_help;
+    sfColor color;
+    sfImage *all_colors_image;
+    sfImage *no_image;
+    sfTexture *tab_col_texture;
+    sfTexture *no_image_texture;
 } paint_t;
 
 // Draw the sprites
@@ -120,6 +116,9 @@ void init_text_file(paint_t *p);
 void init_text_help(paint_t *p);
 void help_phrase1(paint_t *p);
 
+// Initialize images
+void init_images(paint_t* p);
+
 // Close the window
 int close_one(sfRenderWindow *window, sfEvent event);
 
@@ -131,6 +130,10 @@ sfRectangleShape *my_getrect(sfVector2f pos, sfVector2f size, sfColor col);
 
 // Return the text wanted with given parameters
 sfText *my_gettext(char *phrase, char *police, sfVector2f pos, int size);
+
+// Return a sprite with the image given in parameters
+sfSprite *getsprite_fromimage
+(sfTexture *texture, sfVector2f pos, sfVector2f scale);
 
 void file_contour(paint_t *p, sfRenderWindow *window);
 void edit_contour(paint_t *p, sfRenderWindow *window);
@@ -161,5 +164,19 @@ void check_exit(sfMouseButtonEvent event, paint_t *p);
 void fill_file_rect(sfMouseButtonEvent event, paint_t *p);
 void fill_edit_rect(sfMouseButtonEvent event, paint_t *p);
 void fill_help_rect(sfMouseButtonEvent event, paint_t *p);
+
+// Colors
+void update_colors(sfEvent event, paint_t *p);
+void check_line_color(sfEvent event, paint_t *p);
+void check_first_line_color(sfEvent event, paint_t *p);
+void check_second_line_color(sfEvent event, paint_t *p);
+void check_third_line_color(sfEvent event, paint_t *p);
+void check_fourth_line_color(sfEvent event, paint_t *p);
+void check_fifth_line_color(sfEvent event, paint_t *p);
+void check_sixth_line_color(sfEvent event, paint_t *p);
+
+// Draw pixels
+void draw_pixels(sfRenderWindow *window, sfEvent event, paint_t *p);
+void painting(sfRenderWindow *window, sfEvent event, paint_t *p);
 
 #endif /* !paint_h */

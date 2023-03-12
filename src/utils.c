@@ -41,3 +41,13 @@ sfText *my_gettext(char *phrase, char *police, sfVector2f pos, int size)
     sfText_setCharacterSize(text, size);
     return text;
 }
+
+sfSprite *getsprite_fromimage
+(sfTexture *text, sfVector2f pos, sfVector2f scale)
+{
+    sfSprite *sprite = sfSprite_create();
+    sfSprite_setTexture(sprite, text, sfFalse);
+    sfSprite_setScale(sprite, scale);
+    sfSprite_setPosition(sprite, pos);
+    return sprite;
+}
