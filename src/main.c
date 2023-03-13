@@ -16,7 +16,6 @@ void init_all(paint_t *p)
     p->color = sfImage_getPixel(p->all_colors_image, 40, 40);
     p->thickness = 15;
     p->CircleShapeDraw = true;
-
 }
 
 void start(paint_t *p)

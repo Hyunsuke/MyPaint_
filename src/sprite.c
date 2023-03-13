@@ -55,6 +55,16 @@ void edit_isopen(sfRenderWindow *window, paint_t *p)
     sfRenderWindow_drawRectangleShape(window, p->ci_rect, NULL);
     sfRenderWindow_drawRectangleShape(window, p->li_rect, NULL);
     sfRenderWindow_drawRectangleShape(window, p->pi_rect, NULL);
+    sfRenderWindow_drawRectangleShape(window, p->rect1_bck, NULL);
+    sfRenderWindow_drawRectangleShape(window, p->rect2_bck, NULL);
+    if (p->CircleShapeDraw == true)
+        sfRenderWindow_drawCircleShape(window, p->ci_option1, NULL);
+    else
+        sfRenderWindow_drawRectangleShape(window, p->rect_option1, NULL);
+    if (p->CircleShapeDraw)
+        sfRenderWindow_drawCircleShape(window, p->ci_option2, NULL);
+    else
+        sfRenderWindow_drawRectangleShape(window, p->rect_option2, NULL);
     sfRenderWindow_drawText(window, p->pen_text, NULL);
     sfRenderWindow_drawText(window, p->er_text, NULL);
     sfRenderWindow_drawText(window, p->sq_text, NULL);

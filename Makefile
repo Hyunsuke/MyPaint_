@@ -12,8 +12,10 @@ SRC	=	src/main.c	\
 		src/fill_rect.c \
 		src/contour2.c \
 		src/contour3.c \
+		src/contour4.c \
 		src/fill_edit.c \
 		src/fill_help.c \
+		src/check_circle.c \
 		src/create_rectangles/init_rectangles.c	\
 		src/create_sprites/init_sprites.c	\
 		src/create_text/init_texts.c	\

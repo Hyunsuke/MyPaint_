@@ -48,6 +48,12 @@ typedef struct paint_s {
     sfRectangleShape *about_rect;
     sfRectangleShape *he_rect;
     sfRectangleShape *current_color;
+    sfRectangleShape *rect1_bck;
+    sfRectangleShape *rect2_bck;
+    sfRectangleShape *rect_option1;
+    sfCircleShape *ci_option1;
+    sfRectangleShape *rect_option2;
+    sfCircleShape *ci_option2;
     sfText *file_text;
     sfText *edit_text;
     sfText *help_text;
@@ -170,6 +176,9 @@ void check_edit3(sfMouseButtonEvent event, paint_t *p);
 void check_help(sfMouseButtonEvent event, paint_t *p);
 void fill_about_help(paint_t *p);
 void exit_color(paint_t *p, sfRenderWindow *window);
+void set_color2(paint_t *p);
+void rect_and_circle_contour1(paint_t *p, sfRenderWindow *window);
+void rect_and_circle_contour2(paint_t *p, sfRenderWindow *window);
 
 void init_all(paint_t *p);
 void check_opened_menu(sfRenderWindow *window, paint_t *p);
@@ -181,6 +190,7 @@ void check_exit(sfMouseButtonEvent event, paint_t *p);
 void fill_file_rect(sfMouseButtonEvent event, paint_t *p);
 void fill_edit_rect(sfMouseButtonEvent event, paint_t *p);
 void fill_help_rect(sfMouseButtonEvent event, paint_t *p);
+void check_circle(sfMouseButtonEvent event, paint_t *p);
 
 // Colors
 void update_colors(sfEvent event, paint_t *p);

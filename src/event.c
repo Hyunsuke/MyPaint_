@@ -35,7 +35,8 @@ void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
     help_contour(p, window);
     mf_contour(p, window); mf_ed_contour(p, window); ed_contour(p, window);
     ed_contour2(p, window); ed_he_contour(p, window); he_contour(p, window);
-    exit_color(p, window);
+    exit_color(p, window); rect_and_circle_contour1(p, window);
+    rect_and_circle_contour2(p, window);
 }
 
 void manage_mouse_click(sfMouseButtonEvent event, paint_t *p)
@@ -47,7 +48,7 @@ void manage_mouse_click(sfMouseButtonEvent event, paint_t *p)
         fill_help_rect(event, p);
     if (p->iseditopen == true) {
         check_edit(event, p); check_edit2(event, p); check_edit3(event, p);
-        fill_tools(p); fill_tools2(p);
+        fill_tools(p); fill_tools2(p); check_circle(event, p);
     }
     if (p->ishelpopen == true) {
         check_help(event, p); fill_about_help(p);

@@ -6,6 +6,15 @@
 */
 #include "paint.h"
 
+sfCircleShape *init_circle(sfVector2f pos, int radius)
+{
+    sfCircleShape *circle = sfCircleShape_create();
+    sfCircleShape_setRadius(circle, radius);
+    sfCircleShape_setFillColor(circle, sfBlack);
+    sfCircleShape_setPosition(circle, pos);
+    return circle;
+}
+
 void init_rect(paint_t *p)
 {
     sfVector2f of_pos = {87, 374}; sfVector2f of_size = {299, 45};
@@ -42,6 +51,18 @@ void init_rect_3(paint_t *p)
     sfVector2f tab_color_size = {162, 82};
     p->current_color =
     my_getrect(tab_color_pos, tab_color_size, sfBlack);
+    sfVector2f posrb1 = {404, 533}; sfVector2f sizerb1 = {45, 45};
+    p->rect1_bck = my_getrect(posrb1, sizerb1, sfTransparent);
+    sfVector2f posrb2 = {404, 615}; sfVector2f sizerb2 = {45, 45};
+    p->rect2_bck = my_getrect(posrb2, sizerb2, sfTransparent);
+    sfVector2f posrop1 = {413, 542}; sfVector2f sizerop1 = {27, 27};
+    p->rect_option1 = my_getrect(posrop1, sizerop1, sfBlack);
+    sfVector2f posrop2 = {413, 624}; sfVector2f sizerop2 = {27, 27};
+    p->rect_option2 = my_getrect(posrop2, sizerop2, sfBlack);
+    sfVector2f poscop1 = {413, 542}; int sizecop1 = 14;
+    p->ci_option1 = init_circle(poscop1, sizecop1);
+    sfVector2f poscop2 = {413, 624}; int sizecop2 = 14;
+    p->ci_option2 = init_circle(poscop2, sizecop2);
 }
 
 void init_rect_menu(paint_t *p)
