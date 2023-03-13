@@ -61,7 +61,7 @@ void edit_isopen(sfRenderWindow *window, paint_t *p)
         sfRenderWindow_drawCircleShape(window, p->ci_option1, NULL);
     else
         sfRenderWindow_drawRectangleShape(window, p->rect_option1, NULL);
-    if (p->CircleShapeDraw)
+    if (p->CircleShapeDraw == true)
         sfRenderWindow_drawCircleShape(window, p->ci_option2, NULL);
     else
         sfRenderWindow_drawRectangleShape(window, p->rect_option2, NULL);
