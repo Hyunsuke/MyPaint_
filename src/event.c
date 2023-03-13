@@ -6,29 +6,6 @@
 */
 #include "paint.h"
 
-void draw_plw(paint_t *p, sfRenderWindow *window)
-{
-    sfTexture *texture = sfTexture_createFromFile("assets/plus_w.png", NULL);
-    sfTexture *texture1 = sfTexture_createFromFile("assets/plus.png", NULL);
-    sfTexture *texture2 = sfTexture_createFromFile("assets/less.png", NULL);
-    sfTexture *texture3 = sfTexture_createFromFile("assets/less_w.png", NULL);
-    p->mouse = sfMouse_getPositionRenderWindow(window);
-    if (p->mouse.x >= 815 && p->mouse.x <= 891) {
-        if (p->mouse.y >= 888 && p->mouse.y <= 954)
-            sfSprite_setTexture(p->plus, texture, sfFalse);
-        else
-            sfSprite_setTexture(p->plus, texture1, sfFalse);
-    } else
-        sfSprite_setTexture(p->plus, texture1, sfFalse);
-    if (p->mouse.x >= 973 && p->mouse.x <= 1052) {
-        if (p->mouse.y >= 888 && p->mouse.y <= 954)
-            sfSprite_setTexture(p->less, texture3, sfFalse);
-        else
-            sfSprite_setTexture(p->less, texture2, sfFalse);
-    } else
-        sfSprite_setTexture(p->less, texture2, sfFalse);
-}
-
 void update_thickness(sfMouseButtonEvent event, paint_t *p)
 {
     if (event.x >= 815 && event.x <= 891 && event.y >= 888 && event.y <= 954) {
@@ -58,7 +35,7 @@ void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
     help_contour(p, window);
     mf_contour(p, window); mf_ed_contour(p, window); ed_contour(p, window);
     ed_contour2(p, window); ed_he_contour(p, window); he_contour(p, window);
-    exit_color(p, window); draw_plw(p, window);
+    exit_color(p, window);
 }
 
 void manage_mouse_click(sfMouseButtonEvent event, paint_t *p)
