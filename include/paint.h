@@ -29,7 +29,9 @@ typedef struct paint_s {
     sfSprite *plus;
     sfSprite *less;
     sfSprite *plus_w;
+    sfSprite *plus_max;
     sfSprite *less_w;
+    sfSprite *less_max;
     sfRectangleShape *rectangle_draw;
     sfRectangleShape *file_rect;
     sfRectangleShape *edition_rect;
@@ -158,6 +160,8 @@ void ed_contour(paint_t *p, sfRenderWindow *window);
 void ed_contour2(paint_t *p, sfRenderWindow *window);
 void ed_he_contour(paint_t *p, sfRenderWindow *window);
 void he_contour(paint_t *p, sfRenderWindow *window);
+void plus_contour(paint_t *p, sfRenderWindow *window);
+void less_contour(paint_t *p, sfRenderWindow *window);
 void fill_tools(paint_t *p);
 void fill_tools2(paint_t *p);
 void check_edit(sfMouseButtonEvent event, paint_t *p);

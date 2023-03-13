@@ -19,8 +19,8 @@ void setup_sprites(paint_t *p)
     p->plus = my_getsprite("assets/plus.png", pos_p, scale_p);
     sfVector2f pos_l = {960, 870}; sfVector2f scale_l = {0.2, 0.2};
     p->less = my_getsprite("assets/less.png", pos_l, scale_l);
-    sfVector2f pos_pw = {800, 870}; sfVector2f scale_pw = {0.2, 0.2};
-    p->plus_w = my_getsprite("assets/plus_w.png", pos_pw, scale_pw);
-    sfVector2f pos_lw = {960, 870}; sfVector2f scale_lw = {0.2, 0.2};
-    p->less_w = my_getsprite("assets/less_w.png", pos_lw, scale_lw);
+    p->plus_w = my_getsprite("assets/plus_w.png", pos_p, scale_p);
+    p->less_w = my_getsprite("assets/less_w.png", pos_l, scale_l);
+    p->plus_max = my_getsprite("assets/plus_max.png", pos_p, scale_p);
+    p->less_max = my_getsprite("assets/less_max.png", pos_l, scale_l);
 }
