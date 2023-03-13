@@ -23,6 +23,8 @@ SRC	=	src/main.c	\
 		src/colors/colors.c	\
 		src/colors/give_color.c	\
 		src/draw/draw.c	\
+		src/draw/circle_pencil.c	\
+		src/draw/rectangle_pencil.c	\
 
 NAME	=	my_paint
 

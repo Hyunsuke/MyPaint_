@@ -90,6 +90,14 @@ typedef struct paint_s {
     sfImage *no_image;
     sfTexture *tab_col_texture;
     sfTexture *no_image_texture;
+    int thickness;
+    // For drawing
+    bool CircleShapeDraw;
+    float setPixel_x;
+    float setPixel_y;
+    int i;
+    int j;
+    //
 } paint_t;
 
 // Draw the sprites
@@ -176,7 +184,15 @@ void check_fifth_line_color(sfEvent event, paint_t *p);
 void check_sixth_line_color(sfEvent event, paint_t *p);
 
 // Draw pixels
-void draw_pixels(sfRenderWindow *window, sfEvent event, paint_t *p);
-void painting(sfRenderWindow *window, sfEvent event, paint_t *p);
+void draw_pixels(sfRenderWindow *window, paint_t *p);
+void painting(sfRenderWindow *window, paint_t *p);
+void draw_with_tickness(paint_t *p, float x, float y);
+
+void draw_circle_pixels(paint_t *p, int radius, float x, float y);
+void fill_circle_pixels(paint_t *p, int index, int radius);
+void add_first_part_color(paint_t *p, int index, int radius, sfColor color);
+void add_second_part_color(paint_t *p, int index, int radius, sfColor color);
+void draw_rectangle_pixels(paint_t *p, float x, float y);
+void fill_rectangle_pixels(paint_t *p, float x, float y);
 
 #endif /* !paint_h */

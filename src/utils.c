@@ -9,9 +9,6 @@
 sfSprite *my_getsprite(char *filepath, sfVector2f pos, sfVector2f scale)
 {
     sfTexture *texture = sfTexture_createFromFile(filepath, NULL);
-    if (texture == NULL) {
-        return 84;
-    }
     sfSprite *sprite = sfSprite_create();
     sfSprite_setScale(sprite, scale);
     sfSprite_setPosition(sprite, pos);

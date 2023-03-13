@@ -14,6 +14,8 @@ void init_all(paint_t *p)
     init_rect_3(p);
     help_phrase1(p);
     p->color = sfImage_getPixel(p->all_colors_image, 40, 40);
+    p->thickness = 10;
+    p->CircleShapeDraw = true;
 
 }
 
@@ -30,7 +32,7 @@ void start(paint_t *p)
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
         draw_sprites(window, p);
-        painting(window, event, p);
+        painting(window, p);
         sfRenderWindow_display(window);
         p->window_x = sfRenderWindow_getSize(window).x;
         p->window_y = sfRenderWindow_getSize(window).y;

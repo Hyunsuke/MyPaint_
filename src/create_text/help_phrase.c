@@ -6,7 +6,7 @@
 */
 #include "paint.h"
 
-char *phrases_help(paint_t *p)
+char *phrases_help(void)
 {
     char *str = "My_paint allows you to draw on a computer.\n\nTo draw,";
     char *str2 = " please select the Edit menu where different tools ";
@@ -30,7 +30,7 @@ char *phrases_help(paint_t *p)
 
 void help_phrase1(paint_t *p)
 {
-    char *str = phrases_help(p);
+    char *str = phrases_help();
     sfVector2f pos_str = {167, 300}; int size_char = 35;
     p->hp = my_gettext(str, "assets/Baxoe.ttf", pos_str, size_char);
 }

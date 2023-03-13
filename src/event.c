@@ -39,3 +39,12 @@ void manage_mouse_click(sfMouseButtonEvent event, paint_t *p)
         check_exit(event, p);
     }
 }
+
+void painting(sfRenderWindow *window, paint_t *p)
+{
+    while (sfMouse_isButtonPressed(sfMouseLeft)) {
+        if ((p->ispenclick == true || p->iserclick == true)
+        && p->isheclick == false && p->isabclick == false)
+            draw_pixels(window, p);
+    }
+}

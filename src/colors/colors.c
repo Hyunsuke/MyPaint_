@@ -53,10 +53,3 @@ void check_first_line_color(sfEvent event, paint_t *p)
         sfRectangleShape_setFillColor(p->current_color, p->color);
     }
 }
-
-void painting(sfRenderWindow *window, sfEvent event, paint_t *p)
-{
-    while (sfMouse_isButtonPressed(sfMouseLeft)) {
-        draw_pixels(window, event, p);
-    }
-}
