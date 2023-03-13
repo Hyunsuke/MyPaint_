@@ -59,3 +59,25 @@ void add_second_part_color(paint_t *p, int index, int radius, sfColor color)
             && index + p->setPixel_y < height && -index + p->setPixel_y >= 0)
                 sfImage_setPixel(p->no_image, p->i, p->j, color);
 }
+
+/*
+// TO CREATE A CIRCLE NOT FILLED WITH PIXELS.
+// Use this function for the circle tool.
+if (index + x < width && radius + y < height) {
+            sfImage_setPixel(p->no_image, index + x, radius + y, sfBlack);
+        }
+        if (index + x < width && y - radius > 0)
+        sfImage_setPixel(p->no_image, index + x, y - radius, sfBlack);
+        if (radius + x < width && index + y < height)
+        sfImage_setPixel(p->no_image, radius + x, index + y, sfBlack);
+        if (radius + x < width && y - index > 0)
+        sfImage_setPixel(p->no_image, radius + x, y - index, sfBlack);
+        if (x - index > 0 && radius + y < height)
+        sfImage_setPixel(p->no_image, x - index, radius + y, sfBlack);
+        if (x - index > 0 && y - radius > 0)
+        sfImage_setPixel(p->no_image, x - index, y - radius, sfBlack);
+        if (x - radius > 0 && index + y < height)
+        sfImage_setPixel(p->no_image, x - radius, index + y, sfBlack);
+        if (x - radius > 0 && y - index > 0)
+        sfImage_setPixel(p->no_image, x - radius, y - index, sfBlack);
+*/
