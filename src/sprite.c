@@ -15,6 +15,8 @@ void draw_sprites(sfRenderWindow *window, paint_t *p)
     sfRenderWindow_drawText(window, p->file_text, NULL);
     sfRenderWindow_drawSprite(window, p->tab_colors, NULL);
     sfRenderWindow_drawRectangleShape(window, p->current_color, NULL);
+    sfRenderWindow_drawSprite(window, p->plus, NULL);
+    sfRenderWindow_drawSprite(window, p->less, NULL);
     if (p->isfileopen == false) {
         sfRenderWindow_drawRectangleShape(window, p->edition_rect, NULL);
         sfRenderWindow_drawText(window, p->edit_text, NULL);

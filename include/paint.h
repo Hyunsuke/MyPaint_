@@ -26,6 +26,10 @@ typedef struct paint_s {
     sfSprite *about_back;
     sfSprite *help_back;
     sfSprite *tab_colors;
+    sfSprite *plus;
+    sfSprite *less;
+    sfSprite *plus_w;
+    sfSprite *less_w;
     sfRectangleShape *rectangle_draw;
     sfRectangleShape *file_rect;
     sfRectangleShape *edition_rect;
@@ -85,6 +89,7 @@ typedef struct paint_s {
     sfVector2f size_file;
     sfVector2f size_edit;
     sfVector2f size_help;
+    sfVector2i mouse;
     sfColor color;
     sfImage *all_colors_image;
     sfImage *no_image;
