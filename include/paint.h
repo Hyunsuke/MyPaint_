@@ -119,6 +119,7 @@ typedef struct paint_s {
     int error;
     bool isgoodversion;
     bool isgoodname;
+    bool isvalidfile;
 } paint_t;
 
 // Draw the sprites
@@ -225,11 +226,13 @@ void draw_rectangle_pixels(paint_t *p, float x, float y);
 void fill_rectangle_pixels(paint_t *p, float x, float y);
 
 // File menu actions
+void open_file(sfMouseButtonEvent event, paint_t *p);
 void new_file(sfMouseButtonEvent event, paint_t *p, sfRenderWindow *window);
 void save_file(sfMouseButtonEvent event, paint_t *p);
 int check_getstr(paint_t *p);
 void def_version(paint_t *p);
 void def_name(paint_t *p);
+void check_valid(paint_t *p);
 
 // Window boucle
 void start(paint_t *p, sfRenderWindow *window);

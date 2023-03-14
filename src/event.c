@@ -45,7 +45,7 @@ void manage_mouse_click(sfMouseButtonEvent event, paint_t *p,
 {
     fill_file_rect(event, p);
     if (p->isfileopen == true) {
-        new_file(event, p, window); save_file(event, p);
+        new_file(event, p, window); save_file(event, p); open_file(event, p);
     }
     if (p->isfileopen == false)
         fill_edit_rect(event, p);

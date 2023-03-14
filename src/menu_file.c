@@ -37,3 +37,11 @@ void save_file(sfMouseButtonEvent event, paint_t *p)
         p->isgoodversion = false; p->isgoodname = false;
     }
 }
+
+void open_file(sfMouseButtonEvent event, paint_t *p)
+{
+    if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
+        event.y >= (374 * p->scale_y) && event.y <= (422 * p->scale_y)) {
+        check_valid(p);
+    }
+}

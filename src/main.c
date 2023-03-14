@@ -24,7 +24,7 @@ void init_all(paint_t *p)
     p->CircleShapeDraw = true;
     p->scale_x = 0.00;
     p->scale_y = 0.00;
-    p->isgoodversion = false; p->isgoodname = false;
+    p->isgoodversion = false; p->isgoodname = false; p->isvalidfile = false;
 }
 
 void start(paint_t *p, sfRenderWindow *window)

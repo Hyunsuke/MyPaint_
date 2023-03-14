@@ -31,6 +31,7 @@ SRC	=	src/main.c	\
 		src/input.c \
 		src/save_file.c \
 		src/draw_rect_ci_opt.c \
+		src/open_file.c \
 
 NAME	=	my_paint
 
