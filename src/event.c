@@ -8,13 +8,15 @@
 
 void update_thickness(sfMouseButtonEvent event, paint_t *p)
 {
-    if (event.x >= 815 && event.x <= 891 && event.y >= 888 && event.y <= 954) {
+    if (event.x >= (815 * p->scale_x) && event.x <= (891 * p->scale_x) &&
+        event.y >= (888 * p->scale_y) && event.y <= (954 * p->scale_y)) {
         if (p->thickness == 55)
             p->thickness = p->thickness;
         else
             p->thickness = p->thickness + 10;
     }
-    if (event.x >= 973 && event.x <= 1052 && event.y >= 888 && event.y <= 954) {
+    if (event.x >= (973 * p->scale_x) && event.x <= (1052 * p->scale_x) &&
+        event.y >= (888 * p->scale_y) && event.y <= (954 * p->scale_y)) {
         if (p->thickness == 5)
             p->thickness = p->thickness;
         else

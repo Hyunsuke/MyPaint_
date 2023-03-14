@@ -37,8 +37,8 @@ void rect_and_circle_contour2(paint_t *p, sfRenderWindow *window)
 {
     int x = sfMouse_getPositionRenderWindow(window).x;
     int y = sfMouse_getPositionRenderWindow(window).y;
-    if (x >= 404 && x <= 449) {
-        if (y >= 615 && y <= 660) {
+    if (x >= (404 * p->scale_x) && x <= (449 * p->scale_x)) {
+        if (y >= (615 * p->scale_y) && y <= (660 * p->scale_y)) {
             set_color3(p);
         } else {
             set_color4(p);

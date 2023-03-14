@@ -6,6 +6,12 @@
 */
 #include "paint.h"
 
+void def_scale(paint_t *p)
+{
+    p->scale_x = p->window_x / 1920.00;
+    p->scale_y = p->window_y / 1043.00;
+}
+
 void init_all(paint_t *p)
 {
     init_text_menu(p); init_rect_menu(p); init_images(p);
@@ -16,6 +22,8 @@ void init_all(paint_t *p)
     p->color = sfImage_getPixel(p->all_colors_image, 40, 40);
     p->thickness = 15;
     p->CircleShapeDraw = true;
+    p->scale_x = 0.00;
+    p->scale_y = 0.00;
 }
 
 void start(paint_t *p)
@@ -29,11 +37,12 @@ void start(paint_t *p)
     sfRenderWindow_setFramerateLimit(window, 144);
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
+        p->window_x = sfRenderWindow_getSize(window).x;
+        p->window_y = sfRenderWindow_getSize(window).y;
+        def_scale(p);
         draw_sprites(window, p);
         painting(window, p);
         sfRenderWindow_display(window);
-        p->window_x = sfRenderWindow_getSize(window).x;
-        p->window_y = sfRenderWindow_getSize(window).y;
         while (sfRenderWindow_pollEvent(window, &event) &&
         (p->test = close_one(window, event)) == 0) {
             analyse_events(event, p, window);

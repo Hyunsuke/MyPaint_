@@ -111,6 +111,8 @@ typedef struct paint_s {
     int i;
     int j;
     //
+    float scale_x;
+    float scale_y;
 } paint_t;
 
 // Draw the sprites

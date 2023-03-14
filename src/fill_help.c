@@ -20,13 +20,15 @@ void fill_about_help(paint_t *p)
 
 void check_help(sfMouseButtonEvent event, paint_t *p)
 {
-    if (event.x >= 87 && event.x <= 387 && event.y >= 694 && event.y <= 742) {
+    if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
+        event.y >= (694 * p->scale_y) && event.y <= (742 * p->scale_y)) {
         if (p->isabclick == false) {
             p->isabclick = true; p->isheclick = false;
         } else
             p->isabclick = false;
     }
-    if (event.x >= 87 && event.x <= 387 && event.y >= 776 && event.y <= 823) {
+    if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
+        event.y >= (776 * p->scale_y) && event.y <= (823 * p->scale_y)) {
         if (p->isheclick == false) {
             p->isheclick = true; p->isabclick = false;
         } else
