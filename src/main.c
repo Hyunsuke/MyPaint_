@@ -9,7 +9,7 @@
 void def_scale(paint_t *p)
 {
     p->scale_x = p->window_x / 1920.00;
-    p->scale_y = p->window_y / 1043.00;
+    p->scale_y = p->window_y / 1010.00;
 }
 
 void init_all(paint_t *p)

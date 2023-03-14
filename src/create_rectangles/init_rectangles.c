@@ -39,9 +39,7 @@ void init_rect_2(paint_t *p)
     p->sq_rect = my_getrect(sq_pos, sq_size, sfTransparent);
     sfVector2f ci_pos = {87, 779}; sfVector2f ci_size = {299, 45};
     p->ci_rect = my_getrect(ci_pos, ci_size, sfTransparent);
-    sfVector2f li_pos = {87, 861}; sfVector2f li_size = {299, 45};
-    p->li_rect = my_getrect(li_pos, li_size, sfTransparent);
-    sfVector2f pi_pos = {87, 943}; sfVector2f pi_size = {299, 45};
+    sfVector2f pi_pos = {87, 861}; sfVector2f pi_size = {299, 45};
     p->pi_rect = my_getrect(pi_pos, pi_size, sfTransparent);
 }
 

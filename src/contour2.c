@@ -91,15 +91,6 @@ void ed_contour2(paint_t *p, sfRenderWindow *window)
     } else {
         sfRectangleShape_setOutlineColor(p->ci_rect, sfBlack);
     }
-    if (x >= (87 * p->scale_x) && x <= (387 * p->scale_x)) {
-        if (y >= (861 * p->scale_y) && y <= (909 * p->scale_y)) {
-            sfRectangleShape_setOutlineColor(p->li_rect, sfWhite);
-        } else {
-            sfRectangleShape_setOutlineColor(p->li_rect, sfBlack);
-        }
-    } else {
-        sfRectangleShape_setOutlineColor(p->li_rect, sfBlack);
-    }
 }
 
 void ed_he_contour(paint_t *p, sfRenderWindow *window)
@@ -107,7 +98,7 @@ void ed_he_contour(paint_t *p, sfRenderWindow *window)
     int x = sfMouse_getPositionRenderWindow(window).x;
     int y = sfMouse_getPositionRenderWindow(window).y;
     if (x >= (87 * p->scale_x) && x <= (387 * p->scale_x)) {
-        if (y >= (944 * p->scale_y) && y <= (992 * p->scale_y)) {
+        if (y >= (861 * p->scale_y) && y <= (909 * p->scale_y)) {
             sfRectangleShape_setOutlineColor(p->pi_rect, sfWhite);
         } else {
             sfRectangleShape_setOutlineColor(p->pi_rect, sfBlack);

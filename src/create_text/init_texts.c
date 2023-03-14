@@ -23,7 +23,7 @@ void init_text_edit(paint_t *p)
     sfVector2f li_text_pos = {100, 862}; int size_li = 35;
     p->li_text =
     my_gettext("Line", "assets/Baxoe.ttf", li_text_pos, size_li);
-    sfVector2f pi_text_pos = {100, 944}; int size_pi = 35;
+    sfVector2f pi_text_pos = {100, 862}; int size_pi = 35;
     p->pi_text =
     my_gettext("Pipette", "assets/Baxoe.ttf", pi_text_pos, size_pi);
 }

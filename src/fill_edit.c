@@ -24,10 +24,6 @@ void fill_tools(paint_t *p)
         sfRectangleShape_setFillColor(p->ci_rect, sfWhite);
     else
         sfRectangleShape_setFillColor(p->ci_rect, sfTransparent);
-    if (p->isliclick == true)
-        sfRectangleShape_setFillColor(p->li_rect, sfWhite);
-    else
-        sfRectangleShape_setFillColor(p->li_rect, sfTransparent);
 }
 
 void fill_tools2(paint_t *p)
@@ -82,14 +78,6 @@ void check_edit3(sfMouseButtonEvent event, paint_t *p)
 {
     if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
         event.y >= (861 * p->scale_y) && event.y <= (909 * p->scale_y)) {
-        if (p->isliclick == false) {
-            p->isliclick = true; p->iserclick = false; p->ispenclick = false;
-            p->isciclick = false; p->issqclick = false; p->ispiclick = false;
-        } else
-            p->isliclick = false;
-    }
-    if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
-        event.y >= (942 * p->scale_y) && event.y <= (991 * p->scale_y)) {
         if (p->ispiclick == false) {
             p->ispiclick = true; p->ispenclick = false; p->issqclick = false;
             p->iserclick = false; p->isliclick = false; p->isciclick = false;

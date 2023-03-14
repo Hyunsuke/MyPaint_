@@ -111,8 +111,8 @@ typedef struct paint_s {
     int i;
     int j;
     //
-    float scale_x;
-    float scale_y;
+    double scale_x;
+    double scale_y;
     char *input_str;
     char *version;
     char *file_name;

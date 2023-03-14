@@ -53,7 +53,6 @@ void edit_isopen(sfRenderWindow *window, paint_t *p)
     sfRenderWindow_drawRectangleShape(window, p->er_rect, NULL);
     sfRenderWindow_drawRectangleShape(window, p->sq_rect, NULL);
     sfRenderWindow_drawRectangleShape(window, p->ci_rect, NULL);
-    sfRenderWindow_drawRectangleShape(window, p->li_rect, NULL);
     sfRenderWindow_drawRectangleShape(window, p->pi_rect, NULL);
     sfRenderWindow_drawRectangleShape(window, p->rect1_bck, NULL);
     sfRenderWindow_drawRectangleShape(window, p->rect2_bck, NULL);
@@ -62,7 +61,6 @@ void edit_isopen(sfRenderWindow *window, paint_t *p)
     sfRenderWindow_drawText(window, p->er_text, NULL);
     sfRenderWindow_drawText(window, p->sq_text, NULL);
     sfRenderWindow_drawText(window, p->ci_text, NULL);
-    sfRenderWindow_drawText(window, p->li_text, NULL);
     sfRenderWindow_drawText(window, p->pi_text, NULL);
 }
 
