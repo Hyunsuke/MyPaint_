@@ -27,6 +27,7 @@ SRC	=	src/main.c	\
 		src/draw/draw.c	\
 		src/draw/circle_pencil.c	\
 		src/draw/rectangle_pencil.c	\
+		src/menu_file.c \
 
 NAME	=	my_paint
 

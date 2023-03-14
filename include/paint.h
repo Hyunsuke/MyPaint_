@@ -161,7 +161,8 @@ sfSprite *getsprite_fromimage
 void file_contour(paint_t *p, sfRenderWindow *window);
 void edit_contour(paint_t *p, sfRenderWindow *window);
 void help_contour(paint_t *p, sfRenderWindow *window);
-void manage_mouse_click(sfMouseButtonEvent event, paint_t *p);
+void manage_mouse_click(sfMouseButtonEvent event, paint_t *p,
+                        sfRenderWindow *window);
 void mf_contour(paint_t *p, sfRenderWindow *window);
 void mf_ed_contour(paint_t *p, sfRenderWindow *window);
 void ed_contour(paint_t *p, sfRenderWindow *window);
@@ -215,5 +216,11 @@ void add_first_part_color(paint_t *p, int index, int radius, sfColor color);
 void add_second_part_color(paint_t *p, int index, int radius, sfColor color);
 void draw_rectangle_pixels(paint_t *p, float x, float y);
 void fill_rectangle_pixels(paint_t *p, float x, float y);
+
+// File menu actions
+void new_file(sfMouseButtonEvent event, paint_t *p, sfRenderWindow *window);
+
+// Window boucle
+void start(paint_t *p, sfRenderWindow *window);
 
 #endif /* !paint_h */

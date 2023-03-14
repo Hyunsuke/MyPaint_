@@ -26,14 +26,10 @@ void init_all(paint_t *p)
     p->scale_y = 0.00;
 }
 
-void start(paint_t *p)
+void start(paint_t *p, sfRenderWindow *window)
 {
-    sfRenderWindow *window;
-    sfVideoMode mode = {1920, 1080, 64};
     sfEvent event;
     setup_sprites(p); init_all(p);
-    window = sfRenderWindow_create(mode, "my_paint", sfResize | sfClose, NULL);
-    sfRenderWindow_getSize(window);
     sfRenderWindow_setFramerateLimit(window, 144);
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
@@ -71,6 +67,9 @@ int main(int ac, char **av)
         my_eprintf("usage: ./paint\n");
         return 84;
     }
-    start(paint);
+    sfRenderWindow *window;
+    sfVideoMode mode = {1920, 1080, 64};
+    window = sfRenderWindow_create(mode, "my_paint", sfResize | sfClose, NULL);
+    start(paint, window);
     return 0;
 }

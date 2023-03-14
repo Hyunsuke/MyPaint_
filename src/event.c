@@ -28,7 +28,7 @@ void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
 {
     if (event.type == sfEvtMouseButtonPressed) {
         my_printf("%d %d\n", event.mouseButton.x, event.mouseButton.y);
-        manage_mouse_click(event.mouseButton, p);
+        manage_mouse_click(event.mouseButton, p, window);
         update_colors(event, p);
         update_thickness(event.mouseButton, p);
     }
@@ -41,9 +41,13 @@ void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
     rect_and_circle_contour2(p, window);
 }
 
-void manage_mouse_click(sfMouseButtonEvent event, paint_t *p)
+void manage_mouse_click(sfMouseButtonEvent event, paint_t *p,
+                        sfRenderWindow *window)
 {
     fill_file_rect(event, p);
+    if (p->isfileopen == true) {
+        new_file(event, p, window);
+    }
     if (p->isfileopen == false)
         fill_edit_rect(event, p);
     if (p->isfileopen == false && p->iseditopen == false)
