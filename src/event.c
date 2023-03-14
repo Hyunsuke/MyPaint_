@@ -27,7 +27,6 @@ void update_thickness(sfMouseButtonEvent event, paint_t *p)
 void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
 {
     if (event.type == sfEvtMouseButtonPressed) {
-        my_printf("%d %d\n", event.mouseButton.x, event.mouseButton.y);
         manage_mouse_click(event.mouseButton, p, window);
         update_colors(event, p);
         update_thickness(event.mouseButton, p);
@@ -46,7 +45,7 @@ void manage_mouse_click(sfMouseButtonEvent event, paint_t *p,
 {
     fill_file_rect(event, p);
     if (p->isfileopen == true) {
-        new_file(event, p, window);
+        new_file(event, p, window); save_file(event, p);
     }
     if (p->isfileopen == false)
         fill_edit_rect(event, p);

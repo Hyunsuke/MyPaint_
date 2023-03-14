@@ -28,6 +28,9 @@ SRC	=	src/main.c	\
 		src/draw/circle_pencil.c	\
 		src/draw/rectangle_pencil.c	\
 		src/menu_file.c \
+		src/input.c \
+		src/save_file.c \
+		src/draw_rect_ci_opt.c \
 
 NAME	=	my_paint
 

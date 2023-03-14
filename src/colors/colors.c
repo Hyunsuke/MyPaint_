@@ -18,6 +18,18 @@ void update_colors(sfEvent event, paint_t *p)
     }
 }
 
+void check_line_color2(sfEvent event, paint_t *p)
+{
+    if (event.mouseButton.y >= (540 * p->scale_y) &&
+        event.mouseButton.y <= (583 * p->scale_y)) {
+        check_fifth_line_color(event, p);
+    }
+    if (event.mouseButton.y >= (602 * p->scale_y) &&
+        event.mouseButton.y <= (643 * p->scale_y)) {
+        check_sixth_line_color(event, p);
+    }
+}
+
 void check_line_color(sfEvent event, paint_t *p)
 {
     if (event.mouseButton.y >= (288 * p->scale_y) &&
@@ -36,14 +48,7 @@ void check_line_color(sfEvent event, paint_t *p)
         event.mouseButton.y <= (519 * p->scale_y)) {
         check_fourth_line_color(event, p);
     }
-    if (event.mouseButton.y >= (540 * p->scale_y) &&
-        event.mouseButton.y <= (583 * p->scale_y)) {
-        check_fifth_line_color(event, p);
-    }
-    if (event.mouseButton.y >= (602 * p->scale_y) &&
-        event.mouseButton.y <= (643 * p->scale_y)) {
-        check_sixth_line_color(event, p);
-    }
+    check_line_color2(event, p);
 }
 
 void check_first_line_color(sfEvent event, paint_t *p)
