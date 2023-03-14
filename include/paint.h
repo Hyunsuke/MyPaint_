@@ -105,11 +105,21 @@ typedef struct paint_s {
     sfTexture *no_image_texture;
     int thickness;
     // For drawing
-    bool CircleShapeDraw;
+    bool penIsCircle;
     float setPixel_x;
     float setPixel_y;
     int i;
     int j;
+    //
+    bool erIsCircle;
+    float first_click_x;
+    float first_click_y;
+    float release_x;
+    float release_y;
+    int origin_x;
+    int origin_y;
+    int end_x;
+    int end_y;
     //
     double scale_x;
     double scale_y;
@@ -216,14 +226,32 @@ void check_sixth_line_color(sfEvent event, paint_t *p);
 void draw_pixels(sfRenderWindow *window, paint_t *p);
 void painting(sfRenderWindow *window, paint_t *p);
 void draw_with_tickness(paint_t *p, float x, float y);
+void draw_rcopt(sfRenderWindow *window, paint_t *p);
 
 void draw_circle_pixels(paint_t *p, int radius, float x, float y);
 void fill_circle_pixels(paint_t *p, int index, int radius);
-void draw_rcopt(sfRenderWindow *window, paint_t *p);
 void add_first_part_color(paint_t *p, int index, int radius, sfColor color);
 void add_second_part_color(paint_t *p, int index, int radius, sfColor color);
 void draw_rectangle_pixels(paint_t *p, float x, float y);
-void fill_rectangle_pixels(paint_t *p, float x, float y);
+void fill_rectangle_pixels(paint_t *p, float x, float y, sfColor color);
+void erase_with_tickness(paint_t *p, float x, float y);
+void erase_pixels(sfRenderWindow *window, paint_t *p);
+
+void circle_in_notepad(paint_t *p);
+void create_circle(paint_t *p);
+void draw_circle(paint_t *p, int radius);
+void do_circle(paint_t *p, int i, int radius);
+
+void rectangle_in_notepad(paint_t *p);
+void create_rectangle(paint_t *p);
+void draw_rectangle(paint_t *p);
+void do_rectangle(paint_t *p);
+
+void event_is_buttonreleased(sfEvent event, paint_t *p, sfRenderWindow *window);
+
+void pipette_in_notepad(paint_t *p);
+void take_color(paint_t *p);
+void all_contour(paint_t *p, sfRenderWindow *window);
 
 // File menu actions
 void open_file(sfMouseButtonEvent event, paint_t *p);

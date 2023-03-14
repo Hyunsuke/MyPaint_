@@ -9,7 +9,7 @@
 void set_color2(paint_t *p)
 {
     sfRectangleShape_setOutlineColor(p->rect1_bck, sfBlack);
-    if (p->CircleShapeDraw == true)
+    if (p->penIsCircle == true)
         sfCircleShape_setFillColor(p->ci_option1, sfBlack);
     else
         sfRectangleShape_setFillColor(p->rect_option1, sfBlack);
@@ -18,7 +18,7 @@ void set_color2(paint_t *p)
 void set_color3(paint_t *p)
 {
     sfRectangleShape_setOutlineColor(p->rect2_bck, sfWhite);
-    if (p->CircleShapeDraw == true)
+    if (p->erIsCircle == true)
         sfCircleShape_setFillColor(p->ci_option2, sfWhite);
     else
         sfRectangleShape_setFillColor(p->rect_option2, sfWhite);
@@ -27,7 +27,7 @@ void set_color3(paint_t *p)
 void set_color4(paint_t *p)
 {
     sfRectangleShape_setOutlineColor(p->rect2_bck, sfBlack);
-    if (p->CircleShapeDraw == true)
+    if (p->erIsCircle == true)
         sfCircleShape_setFillColor(p->ci_option2, sfBlack);
     else
         sfRectangleShape_setFillColor(p->rect_option2, sfBlack);
@@ -45,7 +45,7 @@ void rect_and_circle_contour2(paint_t *p, sfRenderWindow *window)
         }
     } else {
         sfRectangleShape_setOutlineColor(p->rect2_bck, sfBlack);
-        if (p->CircleShapeDraw == true)
+        if (p->erIsCircle == true)
             sfCircleShape_setFillColor(p->ci_option2, sfBlack);
         else
             sfRectangleShape_setFillColor(p->rect_option2, sfBlack);

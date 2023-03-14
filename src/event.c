@@ -27,10 +27,47 @@ void update_thickness(sfMouseButtonEvent event, paint_t *p)
 void analyse_events(sfEvent event, paint_t *p, sfRenderWindow *window)
 {
     if (event.type == sfEvtMouseButtonPressed) {
+        if (p->issqclick == true) {
+            p->first_click_x = sfMouse_getPositionRenderWindow(window).x;
+            p->first_click_y = sfMouse_getPositionRenderWindow(window).y;
+        }
+        if (p->isciclick == true) {
+            p->first_click_x = sfMouse_getPositionRenderWindow(window).x;
+            p->first_click_y = sfMouse_getPositionRenderWindow(window).y;
+        }
+        if (p->ispiclick == true
+        && p->isheclick == false && p->isabclick == false) {
+            p->first_click_x = sfMouse_getPositionRenderWindow(window).x;
+            p->first_click_y = sfMouse_getPositionRenderWindow(window).y;
+            pipette_in_notepad(p);
+        }
         manage_mouse_click(event.mouseButton, p, window);
-        update_colors(event, p);
-        update_thickness(event.mouseButton, p);
+        update_colors(event, p); update_thickness(event.mouseButton, p);
     }
+    event_is_buttonreleased(event, p, window);
+}
+
+void event_is_buttonreleased(sfEvent event, paint_t *p, sfRenderWindow *window)
+{
+    if (event.type == sfEvtMouseButtonReleased) {
+        if (p->isciclick == true
+        && p->isheclick == false && p->isabclick == false) {
+            p->release_x = sfMouse_getPositionRenderWindow(window).x;
+            p->release_y = sfMouse_getPositionRenderWindow(window).y;
+            circle_in_notepad(p);
+        }
+        if (p->issqclick == true
+        && p->isheclick == false && p->isabclick == false) {
+            p->release_x = sfMouse_getPositionRenderWindow(window).x;
+            p->release_y = sfMouse_getPositionRenderWindow(window).y;
+            rectangle_in_notepad(p);
+        }
+    }
+    all_contour(p, window);
+}
+
+void all_contour(paint_t *p, sfRenderWindow *window)
+{
     file_contour(p, window);
     edit_contour(p, window);
     help_contour(p, window);
@@ -60,14 +97,5 @@ void manage_mouse_click(sfMouseButtonEvent event, paint_t *p,
     }
     if (p->isabclick == true || p->isheclick == true) {
         check_exit(event, p);
-    }
-}
-
-void painting(sfRenderWindow *window, paint_t *p)
-{
-    if (sfMouse_isButtonPressed(sfMouseLeft)) {
-        if ((p->ispenclick == true || p->iserclick == true)
-        && p->isheclick == false && p->isabclick == false)
-            draw_pixels(window, p);
     }
 }

@@ -21,7 +21,7 @@ void init_all(paint_t *p)
     help_phrase1(p);
     p->color = sfImage_getPixel(p->all_colors_image, 40, 40);
     p->thickness = 15;
-    p->CircleShapeDraw = true;
+    p->penIsCircle = true;
     p->scale_x = 0.00;
     p->scale_y = 0.00;
     p->isgoodversion = false; p->isgoodname = false; p->isvalidfile = false;

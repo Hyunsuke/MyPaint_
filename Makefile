@@ -24,6 +24,7 @@ SRC	=	src/main.c	\
 		src/create_images/init_images.c	\
 		src/colors/colors.c	\
 		src/colors/give_color.c	\
+		src/colors/pipette.c	\
 		src/draw/draw.c	\
 		src/draw/circle_pencil.c	\
 		src/draw/rectangle_pencil.c	\
@@ -32,6 +33,9 @@ SRC	=	src/main.c	\
 		src/save_file.c \
 		src/draw_rect_ci_opt.c \
 		src/open_file.c \
+		src/draw/erase.c	\
+		src/forms/circle.c	\
+		src/forms/rectangle.c	\
 
 NAME	=	my_paint
 

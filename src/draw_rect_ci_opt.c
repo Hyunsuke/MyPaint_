@@ -8,11 +8,11 @@
 
 void draw_rcopt(sfRenderWindow *window, paint_t *p)
 {
-    if (p->CircleShapeDraw == true)
+    if (p->penIsCircle == true)
         sfRenderWindow_drawCircleShape(window, p->ci_option1, NULL);
     else
         sfRenderWindow_drawRectangleShape(window, p->rect_option1, NULL);
-    if (p->CircleShapeDraw == true)
+    if (p->erIsCircle == true)
         sfRenderWindow_drawCircleShape(window, p->ci_option2, NULL);
     else
         sfRenderWindow_drawRectangleShape(window, p->rect_option2, NULL);

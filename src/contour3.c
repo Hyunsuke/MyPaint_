@@ -9,7 +9,7 @@
 void set_color(paint_t *p)
 {
     sfRectangleShape_setOutlineColor(p->rect1_bck, sfWhite);
-    if (p->CircleShapeDraw == true)
+    if (p->penIsCircle == true)
         sfCircleShape_setFillColor(p->ci_option1, sfWhite);
     else
         sfRectangleShape_setFillColor(p->rect_option1, sfWhite);
@@ -27,7 +27,7 @@ void rect_and_circle_contour1(paint_t *p, sfRenderWindow *window)
         }
     } else {
         sfRectangleShape_setOutlineColor(p->rect1_bck, sfBlack);
-        if (p->CircleShapeDraw == true)
+        if (p->penIsCircle == true)
             sfCircleShape_setFillColor(p->ci_option1, sfBlack);
         else
             sfRectangleShape_setFillColor(p->rect_option1, sfBlack);
