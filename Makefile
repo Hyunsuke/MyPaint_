@@ -36,6 +36,7 @@ SRC	=	src/main.c	\
 		src/draw/erase.c	\
 		src/forms/circle.c	\
 		src/forms/rectangle.c	\
+		src/check_asset.c \
 
 NAME	=	my_paint
 

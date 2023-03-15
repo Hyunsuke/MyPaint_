@@ -39,12 +39,24 @@ void check_opened_menu(sfRenderWindow *window, paint_t *p)
 
 void file_isopen(sfRenderWindow *window, paint_t *p)
 {
+    if (p->isofClick == true) {
+        sfRectangleShape_setFillColor(p->of_rect, sfWhite);
+        sfRenderWindow_drawSprite(window, p->osf_back, NULL);
+        sfRenderWindow_drawText(window, p->osf_text, NULL);
+    } else
+        sfRectangleShape_setFillColor(p->of_rect, sfTransparent);
     sfRenderWindow_drawRectangleShape(window, p->of_rect, NULL);
-        sfRenderWindow_drawRectangleShape(window, p->nf_rect, NULL);
-        sfRenderWindow_drawRectangleShape(window, p->sf_rect, NULL);
-        sfRenderWindow_drawText(window, p->of_text, NULL);
-        sfRenderWindow_drawText(window, p->nf_text, NULL);
-        sfRenderWindow_drawText(window, p->sf_text, NULL);
+    sfRenderWindow_drawRectangleShape(window, p->nf_rect, NULL);
+    if (p->issfClick == true) {
+        sfRectangleShape_setFillColor(p->sf_rect, sfWhite);
+        sfRenderWindow_drawSprite(window, p->osf_back, NULL);
+        sfRenderWindow_drawText(window, p->osf_text, NULL);
+    } else
+        sfRectangleShape_setFillColor(p->sf_rect, sfTransparent);
+    sfRenderWindow_drawRectangleShape(window, p->sf_rect, NULL);
+    sfRenderWindow_drawText(window, p->of_text, NULL);
+    sfRenderWindow_drawText(window, p->nf_text, NULL);
+    sfRenderWindow_drawText(window, p->sf_text, NULL);
 }
 
 void edit_isopen(sfRenderWindow *window, paint_t *p)

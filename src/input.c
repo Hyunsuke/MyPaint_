@@ -13,8 +13,9 @@ char *my_getstr(paint_t *p)
     if (getline(&p->input_str, &size, stdin) != -1) {
         return p->input_str;
     } else {
-        my_printf("exit\n");
-        exit(0);
+        my_printf("\n");
+        p->input_str = "15256";
+        return p->input_str;
     }
     return NULL;
 }

@@ -41,6 +41,8 @@ void init_text_file(paint_t *p)
     my_gettext("Save file", "assets/Baxoe.ttf", sf_text_pos, size_sf);
     sfVector2f pe = {1650, 897}; int se = 75;
     p->ab_exit = my_gettext("EXIT", "assets/Baxoe.ttf", pe, se);
+    sfVector2f os = {657, 465}; int so = 85;
+    p->osf_text = my_gettext("Go on your terminal", "assets/Baxoe.ttf", os, so);
 }
 
 void init_text_help(paint_t *p)

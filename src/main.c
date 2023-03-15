@@ -25,6 +25,9 @@ void init_all(paint_t *p)
     p->scale_x = 0.00;
     p->scale_y = 0.00;
     p->isgoodversion = false; p->isgoodname = false; p->isvalidfile = false;
+    p->ispenclick = false; p->iserclick = false; p->issqclick = false;
+    p->isciclick = false; p->ispiclick = false; p->isliclick = false;
+    p->issfClick = false; p->isofClick = false;
 }
 
 void start(paint_t *p, sfRenderWindow *window)
@@ -40,6 +43,7 @@ void start(paint_t *p, sfRenderWindow *window)
         draw_sprites(window, p);
         painting(window, p);
         sfRenderWindow_display(window);
+        gestion(p);
         while (sfRenderWindow_pollEvent(window, &event) &&
         (p->test = close_one(window, event)) == 0) {
             analyse_events(event, p, window);
@@ -59,6 +63,8 @@ int close_one(sfRenderWindow *window, sfEvent event)
 int main(int ac, char **av)
 {
     (void) av;
+    if (asset_check() == 24 || asset_check1() == 24)
+        return 84;
     paint_t *paint = malloc(sizeof(paint_t));
         if (paint == NULL) {
             my_eprintf("malloc failed\n");

@@ -23,4 +23,6 @@ void setup_sprites(paint_t *p)
     p->less_w = my_getsprite("assets/less_w.png", pos_l, scale_l);
     p->plus_max = my_getsprite("assets/plus_max.png", pos_p, scale_p);
     p->less_max = my_getsprite("assets/less_max.png", pos_l, scale_l);
+    sfVector2f pos_os = {444, 0}; sfVector2f scale_os = {1, 1};
+    p->osf_back = my_getsprite("assets/background.jpg", pos_os, scale_os);
 }

@@ -27,6 +27,21 @@ void save_file(sfMouseButtonEvent event, paint_t *p)
 {
     if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
         event.y >= (538 * p->scale_y) && event.y <= (585 * p->scale_y)) {
+        p->issfClick = true; p->isofClick = false;
+    }
+}
+
+void open_file(sfMouseButtonEvent event, paint_t *p)
+{
+    if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
+        event.y >= (374 * p->scale_y) && event.y <= (422 * p->scale_y)) {
+        p->issfClick = false; p->isofClick = true;
+    }
+}
+
+void gestion(paint_t *p)
+{
+    if (p->issfClick == true) {
         print_version();
         def_version(p);
         def_name(p);
@@ -35,13 +50,10 @@ void save_file(sfMouseButtonEvent event, paint_t *p)
         my_printf("DONE !\n");
         my_printf("\n");
         p->isgoodversion = false; p->isgoodname = false;
+        p->issfClick = false;
     }
-}
-
-void open_file(sfMouseButtonEvent event, paint_t *p)
-{
-    if (event.x >= (87 * p->scale_x) && event.x <= (387 * p->scale_x) &&
-        event.y >= (374 * p->scale_y) && event.y <= (422 * p->scale_y)) {
+    if (p->isofClick == true) {
         check_valid(p);
+        p->isofClick = false; p->isvalidfile = false;
     }
 }

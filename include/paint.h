@@ -24,6 +24,7 @@ typedef struct paint_s {
     sfSprite *sprite_notepad;
     sfSprite *sprite_tools;
     sfSprite *about_back;
+    sfSprite *osf_back;
     sfSprite *help_back;
     sfSprite *tab_colors;
     sfSprite *plus;
@@ -75,6 +76,7 @@ typedef struct paint_s {
     sfText *he_exit;
     sfText *text_he;
     sfText *hp;
+    sfText *osf_text;
     short test;
     unsigned int window_x;
     unsigned int window_y;
@@ -130,6 +132,8 @@ typedef struct paint_s {
     bool isgoodversion;
     bool isgoodname;
     bool isvalidfile;
+    bool issfClick;
+    bool isofClick;
 } paint_t;
 
 // Draw the sprites
@@ -261,8 +265,13 @@ int check_getstr(paint_t *p);
 void def_version(paint_t *p);
 void def_name(paint_t *p);
 void check_valid(paint_t *p);
+void gestion(paint_t *p);
 
 // Window boucle
 void start(paint_t *p, sfRenderWindow *window);
+
+//Check assets
+int asset_check(void);
+int asset_check1(void);
 
 #endif /* !paint_h */
