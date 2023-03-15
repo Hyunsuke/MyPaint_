@@ -10,23 +10,17 @@ char *my_getstr(paint_t *p)
 {
     p->input_str = NULL;
     size_t size = 0;
-    if (getline(&p->input_str, &size, stdin) != -1) {
+    if (getline(&p->input_str, &size, stdin) != -1)
         return p->input_str;
-    } else {
-        my_printf("\n");
-        p->input_str = "\n";
-        return p->input_str;
-    }
+    my_printf("ERROR: Couldn't read input from stdin. ");
+    my_printf("The program will now exit.\n");
     return NULL;
 }
 
 int check_getstr(paint_t *p)
 {
     p->error = 0;
-    char *str = malloc(sizeof(char) * 2 + 1);
-    if (my_getstr(p) != NULL) {
-        str = p->input_str;
-    } else {
+    if (my_getstr(p) == NULL) {
         p->error = 1;
         return 84;
     }

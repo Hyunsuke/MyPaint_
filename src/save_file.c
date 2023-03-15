@@ -30,12 +30,13 @@ void define_version(paint_t *p, char *str)
     }
 }
 
-void def_version(paint_t *p)
+int def_version(paint_t *p)
 {
     char *str;
     while (p->isgoodversion == false) {
         my_printf("Please enter your choice > ");
-        check_getstr(p);
+        if (check_getstr(p) == 84)
+            return 84;
         str = malloc(sizeof(char) * my_strlen(p->input_str));
         int i = 0;
         for (; p->input_str[i] != '\n'; i++)
@@ -43,6 +44,7 @@ void def_version(paint_t *p)
         str[i] = '\0';
         define_version(p, str);
     }
+    return 0;
 }
 
 int check_name(paint_t *p, char *str1)
@@ -59,12 +61,13 @@ int check_name(paint_t *p, char *str1)
     return 0;
 }
 
-void def_name(paint_t *p)
+int def_name(paint_t *p)
 {
     char *str1;
     while (p->isgoodname == false) {
         my_printf("Please enter the name of your file > ");
-        check_getstr(p);
+        if (check_getstr(p) == 84)
+            return 84;
         str1 = malloc(sizeof(char) * my_strlen(p->input_str));
         int i = 0;
         for (; p->input_str[i] != '\n'; i++)
@@ -72,4 +75,5 @@ void def_name(paint_t *p)
         str1[i] = '\0';
         check_name(p, str1);
     }
+    return 0;
 }

@@ -22,12 +22,13 @@ void exist_file(paint_t *p, char *str)
     }
 }
 
-void check_valid(paint_t *p)
+int check_valid(paint_t *p)
 {
     char *str;
     while (p->isvalidfile == false) {
         my_printf("Enter the path of your file > ");
-        check_getstr(p);
+        if (check_getstr(p) == 84)
+            return 84;
         str = malloc(sizeof(char) * my_strlen(p->input_str));
         int i = 0;
         for (; p->input_str[i] != '\n'; i++)
@@ -36,4 +37,5 @@ void check_valid(paint_t *p)
         exist_file(p, str);
     }
     my_printf("DONE !\n\n");
+    return 0;
 }

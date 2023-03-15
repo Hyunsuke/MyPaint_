@@ -45,7 +45,8 @@ void start(paint_t *p, sfRenderWindow *window)
         draw_sprites(window, p);
         painting(window, p);
         sfRenderWindow_display(window);
-        gestion(p);
+        if (gestion(p) == 84)
+            return;
         while (sfRenderWindow_pollEvent(window, &event) &&
         (p->test = close_one(window, event)) == 0) {
             analyse_events(event, p, window);

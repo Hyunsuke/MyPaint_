@@ -13,6 +13,7 @@ void print_version(void)
     my_printf("\t tap 2 for jpg\n");
     my_printf("\t tap 3 for bmp\n");
     my_printf("\t tap 4 for tga\n\n");
+    my_printf("(BEWARE! CTRL + D will force exit the program)\n\n");
 }
 
 void new_file(sfMouseButtonEvent event, paint_t *p, sfRenderWindow *window)
@@ -39,12 +40,14 @@ void open_file(sfMouseButtonEvent event, paint_t *p)
     }
 }
 
-void gestion(paint_t *p)
+int gestion(paint_t *p)
 {
     if (p->issfClick == true) {
         print_version();
-        def_version(p);
-        def_name(p);
+        if (def_version(p) == 84)
+            return 84;
+        if (def_name(p) == 84)
+            return 84;
         char *str_final = my_strcat(p->file_name, p->version);
         sfImage_saveToFile(p->no_image, str_final);
         my_printf("DONE !\n");
@@ -53,7 +56,10 @@ void gestion(paint_t *p)
         p->issfClick = false;
     }
     if (p->isofClick == true) {
-        check_valid(p);
+    my_printf("(BEWARE! CTRL + D will force exit the program)\n\n");
+        if (check_valid(p) == 84)
+            return 84;
         p->isofClick = false; p->isvalidfile = false;
     }
+    return 0;
 }
