@@ -8,8 +8,8 @@
 
 void def_scale(paint_t *p)
 {
-    p->scale_x = p->window_x / 1920.00;
-    p->scale_y = p->window_y / 1010.00;
+    p->scale_x = p->window_x / p->window_x1;
+    p->scale_y = p->window_y / p->window_y1;
 }
 
 void init_all(paint_t *p)
@@ -35,6 +35,8 @@ void start(paint_t *p, sfRenderWindow *window)
     sfEvent event;
     setup_sprites(p); init_all(p);
     sfRenderWindow_setFramerateLimit(window, 144);
+    p->window_x1 = sfRenderWindow_getSize(window).x;
+    p->window_y1 = sfRenderWindow_getSize(window).y;
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
         p->window_x = sfRenderWindow_getSize(window).x;

@@ -80,6 +80,8 @@ typedef struct paint_s {
     short test;
     unsigned int window_x;
     unsigned int window_y;
+    float window_x1;
+    float window_y1;
     bool isfileopen;
     bool ishelpopen;
     bool iseditopen;
