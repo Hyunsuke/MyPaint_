@@ -12,7 +12,7 @@ char *my_getstr(paint_t *p)
     size_t size = 0;
     if (getline(&p->input_str, &size, stdin) != -1)
         return p->input_str;
-    my_printf("ERROR: Couldn't read input from stdin. ");
+    my_printf("\nERROR: Couldn't read input from stdin. ");
     my_printf("The program will now exit.\n");
     return NULL;
 }
